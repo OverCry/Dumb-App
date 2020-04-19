@@ -13,7 +13,6 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-//    ImageView logo = findViewById(R.id.logo);
     Boolean interrupt = false;
 
     @RequiresApi(api = Build.VERSION_CODES.P)
@@ -23,10 +22,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ImageView logo = findViewById(R.id.logo);
-        logo.setImageAlpha(250);
+
+        //make name fade in
+        Animation animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+        findViewById(R.id.name).startAnimation(animFadeIn);
+        logo.startAnimation(animFadeIn);
 
         Handler transition = new Handler();
-
         //if nothing happens, go to main page
         transition.postDelayed(new Runnable(){
             @Override
@@ -43,9 +45,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 interrupt = true;
+
+                //create fade out animation
                 Animation animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
                 logo.startAnimation(animFadeOut);
 
+                //create handler to change scenes
                 Handler handler = new Handler();
                 handler.postDelayed(new newRunnable(), 1000);
             }
