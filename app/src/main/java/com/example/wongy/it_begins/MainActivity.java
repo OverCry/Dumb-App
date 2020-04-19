@@ -7,6 +7,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         final ImageView logo = findViewById(R.id.logo);
         logo.setImageAlpha(250);
 
-
         Handler transition = new Handler();
 
         //if nothing happens, go to main page
@@ -35,23 +36,24 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.startActivity(toRemainders);
                 }
             }
-        }, interrupt, 4000);
+        }, interrupt, 3000);
 
         //if icon is clicked before change, show Special activity
         findViewById(R.id.logo).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                logo.setImageAlpha(100);
+                interrupt = true;
+                Animation animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
+                logo.startAnimation(animFadeOut);
+
                 Handler handler = new Handler();
-                handler.postDelayed(new newRunnable(), 250);
+                handler.postDelayed(new newRunnable(), 1000);
             }
 
              class newRunnable implements Runnable{
 
                  @Override
                  public void run() {
-                     logo.setImageAlpha(0);
-                     interrupt = true;
                      Intent yay = new Intent(MainActivity.this, Special.class);
                      MainActivity.this.startActivity(yay);
                  }
