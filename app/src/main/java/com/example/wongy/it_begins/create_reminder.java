@@ -1,12 +1,12 @@
 package com.example.wongy.it_begins;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class create_reminder extends AppCompatActivity {
 
@@ -18,16 +18,25 @@ public class create_reminder extends AppCompatActivity {
         final DatePicker datePicker = findViewById(R.id.datePicker);
         Button confirmButton = findViewById(R.id.confirmButton);
         Button cancelButton = findViewById(R.id.cancelButton);
-        EditText text = findViewById(R.id.reminderText);
+        final EditText text = findViewById(R.id.reminderText);
 
+
+        // submitting
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String day = "Day = " + datePicker.getDayOfMonth();
-                String month = "Month = " + (datePicker.getMonth() + 1);
-                String year = "Year = " + datePicker.getYear();
-                // display the values by using a toast
-                Toast.makeText(getApplicationContext(), day + "\n" + month + "\n" + year, Toast.LENGTH_LONG).show();
+                String day = "" + datePicker.getDayOfMonth();
+                String month = "" + (datePicker.getMonth() + 1);
+                String year = "" + datePicker.getYear();
+                String reminderContent = text.getText().toString();
+
+                Intent data = new Intent();
+                data.putExtra("day", day);
+                data.putExtra("month", month);
+                data.putExtra("year", year);
+                data.putExtra("reminder", reminderContent);
+                setResult(RESULT_OK,data);
+                finish();
             }
         });
 

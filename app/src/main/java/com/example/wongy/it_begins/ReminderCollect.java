@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ReminderCollect extends AppCompatActivity {
 
@@ -36,8 +37,15 @@ public class ReminderCollect extends AppCompatActivity {
     //method for creating reminder
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == CREATE) { // this 100 needs to match the 100 we used when we called startActivityForResult!
-            //store
+        if (requestCode == CREATE) {
+            String day = data.getExtras().getString("day");
+            String month = data.getExtras().getString("month");
+            String year = data.getExtras().getString("year");
+            String reminder = data.getExtras().getString("reminder");
+
+            Toast.makeText(getApplicationContext(), day + "\\" + month + "\\" + year, Toast.LENGTH_LONG).show();
+
+
         }
     }
 }
