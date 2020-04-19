@@ -21,7 +21,7 @@ public class Special extends AppCompatActivity {
         setContentView(R.layout.activity_special);
 
         final Button lolicon = findViewById(R.id.youAreLolicon);
-
+        final Button toMain = findViewById(R.id.toMain);
 
         lolicon.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.P)
@@ -41,6 +41,14 @@ public class Special extends AppCompatActivity {
                     }
                 }, 9000);
 
+            }
+        });
+
+        toMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toMain = new Intent(Special.this, ReminderCollect.class);
+                Special.this.startActivity(toMain);
             }
         });
 
