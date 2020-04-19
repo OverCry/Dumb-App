@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 interrupt = true;
+                findViewById(R.id.logo).setEnabled(false);
 
                 //create fade out animation
                 Animation animFadeOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);

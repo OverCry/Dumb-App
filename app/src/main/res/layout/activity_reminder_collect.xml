@@ -15,8 +15,9 @@
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_centerHorizontal="true"
 
         android:layout_marginBottom="519dp"
         android:text="Create new Reminder" />
@@ -29,8 +30,9 @@
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="108dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_centerHorizontal="true"
 
         android:layout_marginBottom="339dp"
         android:text="Edit old Reminder" />
@@ -43,9 +45,10 @@
         android:layout_alignParentEnd="true"
 
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
         android:layout_marginBottom="157dp"
+        android:layout_centerHorizontal="true"
 
         android:text="View Reminders" />
 

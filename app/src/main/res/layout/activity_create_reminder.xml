@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".create_reminder">
 
 
@@ -12,11 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="90dp"
-        android:datePickerMode="spinner"
-        android:padding="40dp" />
-    //android:datePickerMode="spinner"
-    // try to find only spinner
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="229dp"
+        android:datePickerMode="calendar"
+        android:paddingHorizontal="20dp" />
 
     <TextView
         android:id="@+id/Date"
@@ -25,10 +25,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginBottom="471dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="225dp"
+        android:layout_marginBottom="690dp"
         android:text="Date" />
+
+    <EditText
+        android:id="@+id/reminderText"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="66dp"
+        android:inputType="text"
+        android:paddingHorizontal="20dp"
+        android:text="textMultiLine" />
 
     <TextView
         android:id="@+id/Reminder"
@@ -39,28 +53,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="13dp"
         android:layout_marginEnd="222dp"
-        android:layout_marginBottom="702dp"
+        android:layout_marginBottom="184dp"
         android:text="Reminder" />
-
-    <EditText
-        android:id="@+id/reminderText"
-        android:layout_width="374dp"
-        android:layout_height="186dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="506dp"
-        android:text="TextView" />
-
-    <Button
-        android:id="@+id/confirmButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="25dp"
-        android:text="confirm" />
 
     <Button
         android:id="@+id/cancelButton"
@@ -68,9 +62,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="296dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="298dp"
+        android:layout_marginBottom="10dp"
         android:text="Cancel" />
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="9dp"
+        android:text="confirm" />
 
 
 </RelativeLayout>

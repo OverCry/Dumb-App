@@ -1,6 +1,8 @@
 package com.example.wongy.it_begins;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,10 +23,26 @@ public class create_reminder extends AppCompatActivity {
         Button cancelButton = findViewById(R.id.cancelButton);
         final EditText text = findViewById(R.id.reminderText);
 
+        final AlertDialog.Builder checkConfirmationBuilder = new AlertDialog.Builder(this);
+        checkConfirmationBuilder.setTitle("Are you sure?");
+        //maybe add icon
+
+        checkConfirmationBuilder.setMessage("You will lose any progress made ");
+        checkConfirmationBuilder.setCancelable(true);
+//        checkConfirmationBuilder.setPositiveButton("Yes", new DialogInterface.OnCancelListener()){
+//
+//        }
+
+
+
+        final AlertDialog checkConfirmation = checkConfirmationBuilder.create();
+
+
         //cancelling
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                checkConfirmation.show();
                 //create alert?
             }
         });
